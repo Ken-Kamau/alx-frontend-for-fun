@@ -5,8 +5,9 @@ Markdown to HTML Script
 import os
 import sys
 import re
+import markdown
 
-def convert_markdown_to_html(makrdown_file, output_file):
+def convert_markdown_to_html(markdown_file, output_file):
     """
     Conversion ofa markdown file to HTML file before saving the output_file
 
@@ -31,7 +32,7 @@ if __name__ == "__main__":
     Script Entry Point.
     """
     if len(sys.argv) < 3:
-        sys.stderr.write("Usage: ./markdown2html.py <input_file> <output_file>\n")
+        sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
         sys.exit(1)
 
     input_file = sys.argv[1]
