@@ -26,6 +26,28 @@ def convert_markdown_to_html(markdown_file, output_file):
     with open(output_file, 'w') as file:
             file.write(html)
 
+
+def parse_headings(markdown_text):
+    """
+    Parses headings in Markdown syntax and generates corresponding HTML.
+
+    :param markdown_text: The Markdown text.
+    :return: The HTML with replaced headongs.
+    """
+    lines = markdown_text.split('\n')
+    html_lines = []
+
+    for line in lines:
+        if line.startswith('#'):
+            heading_level = min(line.count('#'), 6)
+            heading_text = line.strip('#').strip()
+            html_lines.append(
+                f'<h{heading_level}>{heading_text}</h{heading_level}>')
+        else:
+            html_lines.append(line)
+
+    return '\n'.join(html_lines)
+
 if __name__ == "__main__":
     """
     Script Entry Point.
