@@ -7,6 +7,13 @@ import sys
 import re
 
 def convert_markdown_to_html(makrdown_file, output_file):
+    """
+    Conversion ofa markdown file to HTML file before saving the output_file
+
+    :param markdown_file: Location of the markdown input file.
+    :param output_file: Location of the HTML output file.
+    """
+
     if not os.path.isfile(markdown_file):
         sys.stderr.write(f"Missing {markdown_file}\n")
         sys.exit(1)
