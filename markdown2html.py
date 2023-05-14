@@ -5,7 +5,6 @@ Markdown to HTML Script
 import os
 import sys
 import re
-import markdown
 
 def convert_markdown_to_html(markdown_file, output_file):
     """
